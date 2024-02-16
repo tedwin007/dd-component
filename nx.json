@@ -1,0 +1,53 @@
+{
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    },
+    "@nx/angular:package": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
+    }
+  },
+  "installation": {
+    "version": "18.0.4"
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "nxCloudAccessToken": "MjI3NDJhZDUtOTRiZC00MDZiLThhZDEtYWQ3NDkwMjZmYWE0fHJlYWQtd3JpdGU=",
+  "plugins": [
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "css"
+    }
+  }
+}

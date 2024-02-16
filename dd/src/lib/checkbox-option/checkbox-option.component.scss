@@ -1,0 +1,19 @@
+:host {
+  padding: 10px;
+  display: flex;
+
+  .collapsed-btn:hover {
+    cursor: pointer;
+  }
+}
+
+.checkbox-container {
+  padding-left: 15px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  width: 1.3em;
+  height: 1.3rem;
+  accent-color: lightblue;
+}
